@@ -37,11 +37,11 @@ def vicsek(x: float, y: float, size: int, depth: int) -> None:
 
     new_size = size / 3
     positions = [
-        (x + new_size, y + new_size),  # центр
-        (x, y + new_size),  # левый
-        (x + 2 * new_size, y + new_size),  # правый
-        (x + new_size, y),  # нижний
-        (x + new_size, y + 2 * new_size)  # верхний
+        (x + new_size, y + new_size),
+        (x, y + new_size),
+        (x + 2 * new_size, y + new_size),
+        (x + new_size, y),
+        (x + new_size, y + 2 * new_size)
     ]
 
     for px, py in positions:
