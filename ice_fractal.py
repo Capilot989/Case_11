@@ -45,6 +45,17 @@ def count_segments(depth: int) -> int:
 
 
 def ice_fract_2(depth: int, size: float, total: int) -> None:
+    """
+    Recursively draw an ice crystal fractal with color gradient.
+    
+    This fractal creates a symmetrical ice-like pattern by recursively
+    dividing segments and rotating at specific angles to form crystalline structures.
+    
+    Args:
+        depth (int): Current recursion depth (0 draws base segment)
+        size (float): Length of current segment to draw
+        total (int): Total segments for color gradient calculation
+    """
     global step
 
     if depth == 0:
