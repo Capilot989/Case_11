@@ -68,6 +68,24 @@ def draw_H(x: float, y: float, width: float, height: float) -> None:
               [x + width * 0.75, y + height * 0.75])
 
 
+def count_H_segments(depth: int) -> int:
+    """
+       Calculate the total number of H-shapes in the H-fractal.
+
+       The H-fractal follows a pattern where each H-shape generates 4 smaller
+       H-shapes at the next recursion level, resulting in exponential growth.
+
+       Args:
+           depth (int): Maximum recursion depth of the fractal
+
+       Returns:
+           int: Total number of H-shapes (1 + 4 + 16 + ... + 4^(depth-1))
+       """
+    if depth == 0:
+        return 0
+    return 1 + count_H_segments(depth - 1) * 4
+
+
 def H_recursive(
         x: float, y: float, 
         width: float, height: float, depth: int
@@ -99,21 +117,3 @@ def H_recursive(
     H_recursive(x + width / 2, y + height / 2, new_width, new_height, new_depth)
     H_recursive(x, y, new_width, new_height, new_depth)
     H_recursive(x + width / 2, y, new_width, new_height, new_depth)
-
-
-def count_H_segments(depth: int) -> int:
-    """
-       Calculate the total number of H-shapes in the H-fractal.
-
-       The H-fractal follows a pattern where each H-shape generates 4 smaller
-       H-shapes at the next recursion level, resulting in exponential growth.
-
-       Args:
-           depth (int): Maximum recursion depth of the fractal
-
-       Returns:
-           int: Total number of H-shapes (1 + 4 + 16 + ... + 4^(depth-1))
-       """
-    if depth == 0:
-        return 0
-    return 1 + count_H_segments(depth - 1) * 4
