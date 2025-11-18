@@ -14,7 +14,7 @@ def square(size: int) -> None:
         t.right(90)
 
 
-def fractal(size: int, angle: int, k: float, depth: int) -> None:
+def running_sq(size: int, angle: int, k: float, depth: int) -> None:
     """
         Draw a recursive fractal pattern of squares.
 
@@ -40,4 +40,4 @@ def fractal(size: int, angle: int, k: float, depth: int) -> None:
     t.forward(size * k)
     t.pendown()
 
-    fractal(size * (1 - k), angle, k, depth - 1)
+    running_sq(size * (1 - k), angle, k, depth - 1)
