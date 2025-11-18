@@ -25,7 +25,7 @@ def get_color(step: int, total_steps: int) -> tuple:
     return (r, g, b)
 
 
-def count_segments(depth):
+def count_segments(depth: int) -> int:
     """
     Calculate the number of base segments in a Levy curve for given depth.
 
