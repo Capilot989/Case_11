@@ -21,9 +21,11 @@ def get_color(step: int, total: int) -> tuple:
     Return:
         tuple: RGB color as (red, green, blue) with values 0-255
     """
-    red = int(255 * (step / total))
+    t = max(0, min(step / total, 1))
+
+    red = int(255 * t)
     green = 0
-    blue = int(255 * (1 - step / total))
+    blue = int(255 * (1 - t))
 
     return (red, green, blue)
 
