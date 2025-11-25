@@ -113,11 +113,11 @@ def main() -> None:
        for improved drawing performance.
        """
     size = 0
-    angle = 15
+    angle = 10
     koef = 0.15
     total = 10000
-    x = 0
-    y = 0
+    x = -100
+    y = -100
     width = 0
     height = 0
 
@@ -129,6 +129,18 @@ def main() -> None:
 
     depth = int(input(RU.ENTER_DEPTH))
 
+    if choise != 2 and choise != 3:
+        trt.penup()
+        trt.goto(-100, 0)
+        trt.pendown()
+    else:
+        trt.penup()
+        trt.goto(0, -100)
+        trt.pendown()
+
+    if choise >= 4:
+        trt.right(90)
+
     if choise == 1:
         angle = int(input(RU.ENTER_ANGLE))
         koef = float(input(RU.ENTER_KOEF))
@@ -139,9 +151,6 @@ def main() -> None:
     else:
         size = int(input(RU.ENTER_SIZE))
 
-    if 10 <= choise <= 12:
-        x = int(input(RU.ENTER_X))
-        y = int(input(RU.ENTER_Y))
 
     if choise != 1:
         total = determine_total(choise, depth)
