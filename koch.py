@@ -3,6 +3,7 @@ import turtle as t
 t.colormode(255)
 
 step = 0
+t.right(90)
 
 
 def get_color(step: int, total: int) -> tuple:
