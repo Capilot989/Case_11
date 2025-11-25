@@ -3,7 +3,6 @@ import turtle as t
 t.colormode(255)
 
 step = 0
-t.right(90)
 
 
 def get_color(step: int, total: int) -> tuple:
@@ -97,3 +96,4 @@ def snowflake(size: int, depth: int, total: int) -> None:
     for _ in range(3):
         koch(size, depth, total)
         t.right(120)
+
